@@ -1,0 +1,583 @@
+  --primary: #2563eb;
+  --secondary: #64748b;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --background: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--background);
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+.navbar {
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  margin: 3rem 0;
+  height: auto;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: var(--secondary);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.benefits-list {
+  list-style: none;
+  text-align: left;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.benefits-list li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.benefits-list li::before {
+  content: "✓";
+  color: var(--success);
+  font-weight: bold;
+}
+
+.seo-dashboard {
+  display: none;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+}
+
+.results {
+  margin-top: 2rem;
+}
+
+.metric-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.score.good {
+  color: var(--success);
+}
+
+.score.bad {
+  color: var(--danger);
+}
+
+.score.medium {
+  color: #ca8a04;
+}
+
+.metric-card ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.metric-card ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.metric-card ul li:before {
+  position: absolute;
+  left: 0;
+  content: "•";
+  color: var(--primary);
+}
+
+.metric-card ul li::after {
+  content: "✗";
+  color: var(--danger);
+}
+
+.good { color: var(--success); }
+.bad { color: var(--danger); }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.keyword-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.keyword-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.keyword-table th,
+.keyword-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.competition-level {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.low { background: #dcfce7; color: #166534; }
+.medium { background: #fef9c3; color: #854d0e; }
+.high { background: #fee2e2; color: #991b1b; }
+</style></head><body>
+
+<nav class="navbar">
+  <a href="https://meta-seo.app" class="logo">MetaSEO</a>
+</nav>
+
+<div class="container">
+  <div class="hero" id="landing">
+    <h1>MetaSEO - La Soluci&#xf3;n Definitiva para tu Visibilidad Online</h1>
+    <p class="hero-description">
+      MetaSEO es la herramienta definitiva para mejorar la visibilidad de tu sitio web. 
+      Con nuestras herramientas avanzadas de an&#xe1;lisis SEO, seguimiento y optimizaci&#xf3;n de contenido, 
+      podr&#xe1;s llevar tu estrategia digital al siguiente nivel.
+    </p>
+    
+    <ul class="benefits-list">
+      <li>An&#xe1;lisis detallado y completo de tu sitio web</li>
+      <li>Seguimiento efectivo de palabras clave</li>
+      <li>Optimizaci&#xf3;n inteligente de contenido</li>
+      <li>Informes PDF personalizados con recomendaciones</li>
+      <li>Pagos f&#xe1;ciles y seguros mediante Bizum</li>
+    </ul>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f50d;</div>
+        <h3>An&#xe1;lisis Completo</h3>
+        <p>Evaluaci&#xf3;n detallada de m&#xe1;s de 100 factores SEO que afectan tu posicionamiento</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f4ca;</div>
+        <h3>M&#xe9;tricas en Tiempo Real</h3>
+        <p>Monitoriza tu rendimiento SEO con datos actualizados y comparativas hist&#xf3;ricas</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f3af;</div>
+        <h3>Recomendaciones Personalizadas</h3>
+        <p>Obt&#xe9;n sugerencias espec&#xed;ficas para mejorar tu posicionamiento y tr&#xe1;fico org&#xe1;nico</p>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="showModal(&apos;register&apos;)">Comenzar Ahora</button>
+  </div>
+
+  <div class="seo-dashboard" id="seoDashboard">
+    <h2>An&#xe1;lisis SEO</h2>
+    <div class="input-group">
+      <input type="url" id="urlInput" placeholder="Introduce la URL de tu sitio web">
+      <button class="btn btn-primary" onclick="runSEOAnalysis()">Analizar</button>
+    </div>
+
+    <div class="results" id="results" style="display: none;">
+      <div class="metric-card">
+        <div class="metric-header">
+          <h3>Velocidad de Carga</h3>
+          <span class="score good">92/100</span>
+        </div>
+        <p>Tu sitio web carga r&#xe1;pidamente en dispositivos m&#xf3;viles y escritorio.</p>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <h3>SEO On-Page</h3>
+          <span class="score bad">65/100</span>
+        </div>
+        <ul>
+          <li>&#x2713; Meta t&#xed;tulos optimizados</li>
+          <li>&#x2717; Faltan meta descripciones</li>
+          <li>&#x2717; Mejorar estructura de encabezados</li>
+        </ul>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <h3>Investigaci&#xf3;n de Palabras Clave</h3>
+        </div>
+        <p>An&#xe1;lisis detallado de t&#xe9;rminos y frases relevantes para tu negocio:</p>
+        <ul>
+          <li>&#x2713; Identificaci&#xf3;n de t&#xe9;rminos clave del sector</li>
+          <li>&#x2713; Volumen de b&#xfa;squedas mensual</li>
+          <li>&#x2713; Dificultad de posicionamiento</li>
+        </ul>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <h3>Auditor&#xed;a T&#xe9;cnica</h3>
+          <span class="score good">88/100</span>
+        </div>
+        <ul>
+          <li>&#x2713; HTTPS activado</li>
+          <li>&#x2713; Sitio optimizado para m&#xf3;viles</li>
+          <li>&#x2717; Mejorar velocidad de carga</li>
+          <li>&#x2713; Estructura de URLs correcta</li>
+        </ul>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <h3>Optimizaci&#xf3;n On-Page</h3>
+          <span class="score medium">75/100</span>
+        </div>
+        <ul>
+          <li>&#x2713; T&#xed;tulos y meta descripciones</li>
+          <li>&#x2717; Optimizaci&#xf3;n de im&#xe1;genes pendiente</li>
+          <li>&#x2713; Estructura de contenido correcta</li>
+          <li>&#x2717; Mejorar densidad de palabras clave</li>
+        </ul>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <h3>Optimizaci&#xf3;n Off-Page</h3>
+          <span class="score bad">62/100</span>
+        </div>
+        <ul>
+          <li>&#x2717; Aumentar backlinks de calidad</li>
+          <li>&#x2713; Presencia en redes sociales</li>
+          <li>&#x2717; Mejorar autoridad de dominio</li>
+        </ul>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <h3>An&#xe1;lisis de Competencia</h3>
+        </div>
+        <table class="keyword-table">
+          <thead>
+            <tr>
+              <th>Competidor</th>
+              <th>Autoridad</th>
+              <th>Palabras Clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>competidor1.com</td>
+              <td>85/100</td>
+              <td>245</td>
+            </tr>
+            <tr>
+              <td>competidor2.com</td>
+              <td>72/100</td>
+              <td>189</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <h3>An&#xe1;lisis de Tr&#xe1;fico</h3>
+        </div>
+        <ul>
+          <li>Visitantes mensuales: 15,420</li>
+          <li>Tasa de rebote: 45%</li>
+          <li>Tiempo medio en p&#xe1;gina: 2:35</li>
+          <li>P&#xe1;ginas por sesi&#xf3;n: 3.2</li>
+        </ul>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <h3>Herramientas SEO Recomendadas</h3>
+        </div>
+        <ul>
+          <li>SEMrush - An&#xe1;lisis de competencia, investigaci&#xf3;n de palabras clave y auditor&#xed;as SEO completas</li>
+          <li>Ahrefs - Especializado en an&#xe1;lisis de backlinks y evaluaci&#xf3;n de competencia</li>
+          <li>Moz Pro - Herramientas de rastreo y an&#xe1;lisis de autoridad de dominio</li>
+          <li>Google Search Console - Monitorizaci&#xf3;n gratuita del rendimiento en b&#xfa;squedas</li>
+          <li>Yoast SEO - Plugin optimizaci&#xf3;n WordPress para blogs y p&#xe1;ginas</li>
+        </ul>
+      </div>
+
+      <div class="keyword-card">
+        <div class="metric-header">
+          <h3>Sugerencias de Palabras Clave</h3>
+        </div>
+        <table class="keyword-table">
+          <thead>
+            <tr>
+              <th>Palabra Clave</th>
+              <th>Volumen Mensual</th>
+              <th>Competencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>marketing digital</td>
+              <td>33,000</td>
+              <td><span class="competition-level high">Alta</span></td>
+            </tr>
+            <tr>
+              <td>seo para empresas</td>
+              <td>12,500</td>
+              <td><span class="competition-level medium">Media</span></td>
+            </tr>
+            <tr>
+              <td>optimizaci&#xf3;n web</td>
+              <td>8,200</td>
+              <td><span class="competition-level low">Baja</span></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div style="margin-top: 1.5rem;">
+          <h4>Ideas de Contenido Sugeridas:</h4>
+          <ul style="margin-top: 0.5rem;">
+            <li>Gu&#xed;a completa de optimizaci&#xf3;n SEO para principiantes</li>
+            <li>C&#xf3;mo mejorar el ranking de tu sitio web en 2024</li>
+            <li>Estrategias efectivas de marketing digital para peque&#xf1;as empresas</li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" onclick="showModal(&apos;payment&apos;)">Descargar Informe PDF</button>
+    </div>
+  </div>
+</div>
+
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <h2>Crear Cuenta</h2>
+    <form onsubmit="handleRegister(event)">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" required>
+      </div>
+      <div class="form-group">
+        <label>Contrase&#xf1;a</label>
+        <input type="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%">Registrarse</button>
+    </form>
+  </div>
+</div>
+
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <h2>Iniciar Sesi&#xf3;n</h2>
+    <form onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" required>
+      </div>
+      <div class="form-group">
+        <label>Contrase&#xf1;a</label>
+        <input type="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%">Iniciar Sesi&#xf3;n</button>
+    </form>
+  </div>
+</div>
+
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <h2>Descargar Informe PDF</h2>
+    <div style="margin: 2rem 0">
+      <h3>Precio: 29.99&#x20ac;</h3>
+      <p>Informe detallado con recomendaciones personalizadas</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <button class="btn btn-primary" onclick="payWithBizum()">Pagar con Bizum</button>
+      <button class="btn btn-outline" onclick="payWithBank()">Transferencia Bancaria</button>
+    </div>
+  </div>
+</div>
+
+<script>function showModal(type) {
+  document.getElementById(type + 'Modal').style.display = 'block';
+}
+function handleRegister(event) {
+  event.preventDefault();
+  document.getElementById('registerModal').style.display = 'none';
+  showModal('login');
+}
+function handleLogin(event) {
+  event.preventDefault();
+  document.getElementById('loginModal').style.display = 'none';
+  document.getElementById('landing').style.display = 'none';
+  document.getElementById('seoDashboard').style.display = 'block';
+}
+function runSEOAnalysis() {
+  const url = document.getElementById('urlInput').value;
+  if (!url) {
+    alert('Por favor, introduce una URL válida');
+    return;
+  }
+  document.getElementById('urlInput').disabled = true;
+  document.getElementById('results').style.display = 'none';
+  setTimeout(() => {
+    document.getElementById('urlInput').disabled = false;
+    document.getElementById('results').style.display = 'block';
+  }, 1500);
+}
+function payWithBizum() {
+  alert('Redirigiendo a Bizum...');
+}
+function payWithBank() {
+  alert('Datos bancarios:\nIBAN: ES91 2100 0418 4502 0005 1332\nBeneficiario: MetaSEO Analytics');
+}
+window.onclick = function (event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = 'none';
+  }
+};</script>
+
+</body></html>
